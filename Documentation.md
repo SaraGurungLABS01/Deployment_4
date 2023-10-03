@@ -137,6 +137,9 @@ Following these steps allows Jenkins to send email notifications, providing real
 
 ## System Diagram
 
+![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/4b7b23a3-310e-4745-af73-86a446197795)
+
+
 
 ## T2.micro Considerations:
 
