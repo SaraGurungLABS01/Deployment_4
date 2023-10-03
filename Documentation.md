@@ -79,3 +79,6 @@ To monitor our EC2 instance, we'll need a monitoring agent:
 
 Now, update our Jenkinsfile with the provided script:
 
+![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/2dc4fc63-343f-4540-8bd9-91de27a48463)
+
+
