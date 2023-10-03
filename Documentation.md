@@ -102,7 +102,14 @@ Now, update our Jenkinsfile with the provided script:
 - Created a pull request on GitHub detailing the changes.
 - Successfully merged the pull request into the main branch.
 
-**Result**
+## Result
 
 ![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/2dc4fc63-343f-4540-8bd9-91de27a48463)
+
+## Step 7: Performance Monitoring
+Monitor Server Performance:
+- Use tools like htop for real-time monitoring and utilize CloudWatch or Datadog for comprehensive performance metrics.
+-Create a CloudWatch alarm to receive notifications when CPU usage exceeds 10% for 5 minutes.
+    - Configure the alarm to trigger actions such as sending email notifications or executing automated responses when the threshold is breached.
+    - By setting up CloudWatch alarms, we were able to proactively monitor and respond to CPU usage anomalies, ensuring the smooth operation of our application on AWS EC2.
 
