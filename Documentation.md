@@ -130,6 +130,11 @@ To configure email notifications in Jenkins for build status updates, follow the
 
 Following these steps allows Jenkins to send email notifications, providing real-time updates on build status during the deployment process.
 
+## Launch the Application
+
+![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/fda8122f-1e56-44a9-af38-5255b1c8c679)
+
+
 ## System Diagram
 
 
