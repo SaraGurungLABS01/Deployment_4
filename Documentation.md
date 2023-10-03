@@ -119,10 +119,6 @@ Some helpful links:
 - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-EC2-Instance-fleet.html
 - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ConsoleAlarms.html
 
-## T2.micro Considerations:
-
-A t2.micro instance may struggle with the current deployment due to its limited CPU resources, which could result in long build times due to a lack of resources, performance issues under even moderate loads, and stability problems when multiple processes compete for CPU. While a t2.medium instance, as used in this deployment, offers better performance and resource availability, it's essential to assess your application's resource demands. If the server can handle the installed software and workload effectively, the t2.medium instance proves suitable. However, if resource limitations become a concern, especially during resource-intensive tasks, transitioning to a t2.micro instance might result in longer build times, performance bottlenecks, and potential instability under moderate loads.
-
 ## Step 8: Jenkins Email Notifications
 
 To configure email notifications in Jenkins for build status updates, follow these steps:
@@ -133,3 +129,18 @@ To configure email notifications in Jenkins for build status updates, follow the
    - To receive email alerts, especially in case of build failures, you can either add a post-build action in the Jenkinsfile or configure it within the "Post-build Actions" section.
 
 Following these steps allows Jenkins to send email notifications, providing real-time updates on build status during the deployment process.
+
+## System Diagram
+
+
+## T2.micro Considerations:
+
+A t2.micro instance may struggle with the current deployment due to its limited CPU resources, which could result in long build times due to a lack of resources, performance issues under even moderate loads, and stability problems when multiple processes compete for CPU. While a t2.medium instance, as used in this deployment, offers better performance and resource availability, it's essential to assess your application's resource demands. If the server can handle the installed software and workload effectively, the t2.medium instance proves suitable. However, if resource limitations become a concern, especially during resource-intensive tasks, transitioning to a t2.micro instance might result in longer build times, performance bottlenecks, and potential instability under moderate loads.
+
+## Optimization
+
+- Resource Scaling: Vertically scale the EC2 instance to larger types as our application's resource demands grow. This ensures adequate CPU, memory, and network resources are available, optimizing performance under varying workloads.
+
+- Load Balancing: Implement horizontal scaling by deploying multiple instances behind a load balancer. This strategy enhances reliability and distributes incoming traffic evenly, allowing our application to handle increased loads seamlessly.
+
+- Content Delivery Network (CDN): Integrate a Content Delivery Network (CDN) to serve static assets like images, stylesheets, and scripts from edge locations. CDNs significantly reduce latency, improve content delivery speed, and offload traffic from our EC2 instances, optimizing overall performance.
