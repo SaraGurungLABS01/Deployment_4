@@ -4,8 +4,8 @@ The purpose of this project is to deploy a web application on an Amazon EC2 inst
 ## STEPS:
 
 ## Initial Steps : Creating a new Repository in Github
-1. Created a new Repository under the name Deployment_2
-2. Downloaded the zip files from the Repository : C4_deployment-3 and unzipped them
+1. Created a new Repository under the name Deployment_4
+2. Downloaded the zip files from the Repository : C4_deployment-4 and unzipped them
 3. Uploaded the unzipped files to the new repository that was created
  
 
@@ -19,7 +19,7 @@ Before we start deploying our application, we must ensure that we have the requi
    - Log in to the AWS Management Console.
    - Navigate to the VPC service.
    - Create a new VPC with an appropriate CIDR block (e.g., 10.0.0.0/16).
-   - Configure the VPC's route tables and security group settings to allow internet access.
+   - Configure the VPC's route tables and security group settings to allow internet traffic on ports 80, 8080, 8000, and 22.
 
 2. **Create a Public Subnet:**
    - Inside our VPC, create a public subnet with an associated route table.
@@ -27,24 +27,20 @@ Before we start deploying our application, we must ensure that we have the requi
 
 ## Step 2: Launch an EC2 Instance**
 
-Now that you have the network infrastructure in place, we can launch an EC2 instance where your application will be deployed. Here's how:
+Now that we have the network infrastructure in place, we can launch an EC2 instance where your application will be deployed. Here's how:
 
  **Launch an EC2 Instance:**
    - Go to the EC2 service in the AWS Management Console.
    - Launch a new EC2 instance, selecting the T2 Medium instance type.
-   - Choose the public subnet you created in step 2.
-   - Configure security groups to allow inbound traffic on ports 80, 8080, 8000, and 22 as specified in your instructions.
+   - Choose the VPC and public subnet you created in step 1.
 
 ## Step 3: Install Software and Plugins**
 
 Next, we'll set up the necessary software and Jenkins plugins on our EC2 instance:
 
-1.  **SSH into the EC2 Instance:**
-   - Use SSH to connect to our EC2 instance. We'll need the private key associated with the instance.
-
-2. **Install Jenkins and Required Software:**
+1. **Install Jenkins and Required Software:**
    - Update the package manager: `sudo apt update`
-   - Install Jenkins: Follow the Jenkins installation instructions for your Linux distribution (https://www.jenkins.io/doc/book/installing/linux/).
+   - Install Jenkins: Follow the Jenkins installation instructions (https://pkg.jenkins.io/debian/).
    - Install the required software packages: 
      ```bash
      sudo apt install python3.10-venv python3-pip nginx -y
@@ -65,17 +61,24 @@ Now, configure Nginx on our EC2 instance to act as a reverse proxy:
      ```
    - Replace the content with the provided configuration (changing the port from 80 to 5000 and configuring the proxy settings).
 
-## Step 5: Install Monitoring Agent**
+     ![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/db2bec93-4def-44df-a01e-dc87a5805614)
+
+
+## Step 5: Install Monitoring Agent
 
 To monitor our EC2 instance, we'll need a monitoring agent:
 
 
-
  **Install CloudWatch Agent:**
+- Follow the link for the steps : (https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html) on your EC2 instance.
+- Run the configuration wizard to set up the CloudWatch agent. Ensure it collects metrics.
+ ```bash
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status
+     ```
    ![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/1f827c66-1471-4bda-af2f-e4cf82308e72)
-
-
-**Step 6: Update Jenkinsfile**
+  
+## Step 6: Install Monitoring Agent
 
 Now, update our Jenkinsfile with the provided script:
 
