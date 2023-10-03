@@ -84,10 +84,9 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a 
 ## Step 6: Jenkin Pipeline Configuration and Update JenkinsFile using Git
 
 - Create a Jenkins job of the "multibranch pipeline" type. This job will automate tasks such as building and deploying based on your code's branches.
-
 - Next, in the job's settings, establish a connection between Jenkins and your GitHub repository. This linkage allows Jenkins to interact with your repository, including fetching code and managing builds.
-
 - Navigate to your GitHub repository's settings and set up a webhook that points to your Jenkins instance. This webhook acts as a communication channel, prompting Jenkins to automatically initiate builds whenever changes are pushed to your repository.
+  
 
 **Thenafter**
 
