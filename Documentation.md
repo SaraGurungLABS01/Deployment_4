@@ -69,8 +69,11 @@ Now, configure Nginx on our EC2 instance to act as a reverse proxy:
 
 To monitor our EC2 instance, we'll need a monitoring agent:
 
+
+
  **Install CloudWatch Agent:**
-   - 
+   ![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/1f827c66-1471-4bda-af2f-e4cf82308e72)
+
 
 **Step 6: Update Jenkinsfile**
 
