@@ -3,13 +3,13 @@ The purpose of this project is to deploy a web application on an Amazon EC2 inst
 
 ## STEPS:
 
-## 1. Starting a new Repository
+## Initial Steps : Creating a new Repository in Github
 1. Created a new Repository under the name Deployment_2
 2. Downloaded the zip files from the Repository : C4_deployment-3 and unzipped them
 3. Uploaded the unzipped files to the new repository that was created
  
 
-Follow these steps to deploy your application on AWS EC2 according to the provided instructions:
+Follow these steps to deploy your application on AWS EC2:
 
 **Step 1: Create AWS Resources**
 
