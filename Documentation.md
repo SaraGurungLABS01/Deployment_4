@@ -109,7 +109,27 @@ Now, update our Jenkinsfile with the provided script:
 ## Step 7: Performance Monitoring
 Monitor Server Performance:
 - Use tools like htop for real-time monitoring and utilize CloudWatch or Datadog for comprehensive performance metrics.
--Create a CloudWatch alarm to receive notifications when CPU usage exceeds 10% for 5 minutes.
+- Created a CloudWatch alarm to receive notifications when CPU usage exceeds 10% for 5 minutes.
     - Configure the alarm to trigger actions such as sending email notifications or executing automated responses when the threshold is breached.
     - By setting up CloudWatch alarms, we were able to proactively monitor and respond to CPU usage anomalies, ensuring the smooth operation of our application on AWS EC2.
+ 
+ "C:\Users\Saraswati\Desktop\Screenshot 2023-10-03 024221.png"
+ 
+Some helpful links:
+- https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-EC2-Instance-fleet.html
+- https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ConsoleAlarms.html
 
+## T2.micro Considerations:
+
+A t2.micro instance may struggle with the current deployment due to its limited CPU resources, which could result in long build times due to a lack of resources, performance issues under even moderate loads, and stability problems when multiple processes compete for CPU. While a t2.medium instance, as used in this deployment, offers better performance and resource availability, it's essential to assess your application's resource demands. If the server can handle the installed software and workload effectively, the t2.medium instance proves suitable. However, if resource limitations become a concern, especially during resource-intensive tasks, transitioning to a t2.micro instance might result in longer build times, performance bottlenecks, and potential instability under moderate loads.
+
+## Step 8: Jenkins Email Notifications
+
+To configure email notifications in Jenkins for build status updates, follow these steps:
+- Provide System Admin Email Address:
+  - Access the Jenkins web interface and navigate to "Manage Jenkins" > "Configure System."
+  - In the configuration settings, locate the field to input the system admin email address. This ensures notifications are sent to the specified email.
+- Enable Editable Email Notification:
+   - To receive email alerts, especially in case of build failures, you can either add a post-build action in the Jenkinsfile or configure it within the "Post-build Actions" section.
+
+Following these steps allows Jenkins to send email notifications, providing real-time updates on build status during the deployment process.
