@@ -95,12 +95,12 @@ Now, update our Jenkinsfile with the provided script:
 ![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/610b9c00-655d-4bc7-b9a3-0b815eb9e667)
 
  **Steps**
--Created a new branch "new_branch2" using "git checkout -b new_branch2" for Jenkinsfile changes.
--Made changes to the Jenkinsfile and used "git add" to stage them.
--Committed changes with "git commit" and provided a descriptive message.
--Pushed the committed changes to "new_branch2" on GitHub using "git push origin new_branch2."
--Created a pull request on GitHub detailing the changes.
--Successfully merged the pull request into the main branch.
+- Created a new branch "new_branch2" using "git checkout -b new_branch2" for Jenkinsfile changes.
+- Made changes to the Jenkinsfile and used "git add" to stage them.
+- Committed changes with "git commit" and provided a descriptive message.
+- Pushed the committed changes to "new_branch2" on GitHub using "git push origin new_branch2."
+- Created a pull request on GitHub detailing the changes.
+- Successfully merged the pull request into the main branch.
 
 **Result**
 
