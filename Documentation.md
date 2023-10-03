@@ -81,10 +81,29 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a 
 ![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/1f827c66-1471-4bda-af2f-e4cf82308e72)
 
   
-## Step 6: Update JenkinsFile using Git
+## Step 6: Jenkin Pipeline Configuration and Update JenkinsFile using Git
+
+- Create a Jenkins job of the "multibranch pipeline" type. This job will automate tasks such as building and deploying based on your code's branches.
+
+- Next, in the job's settings, establish a connection between Jenkins and your GitHub repository. This linkage allows Jenkins to interact with your repository, including fetching code and managing builds.
+
+- Navigate to your GitHub repository's settings and set up a webhook that points to your Jenkins instance. This webhook acts as a communication channel, prompting Jenkins to automatically initiate builds whenever changes are pushed to your repository.
+
+**Thenafter**
 
 Now, update our Jenkinsfile with the provided script:
 
-![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/2dc4fc63-343f-4540-8bd9-91de27a48463)
+![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/610b9c00-655d-4bc7-b9a3-0b815eb9e667)
 
+ **Steps**
+-Created a new branch "new_branch2" using "git checkout -b new_branch2" for Jenkinsfile changes.
+-Made changes to the Jenkinsfile and used "git add" to stage them.
+-Committed changes with "git commit" and provided a descriptive message.
+-Pushed the committed changes to "new_branch2" on GitHub using "git push origin new_branch2."
+-Created a pull request on GitHub detailing the changes.
+-Successfully merged the pull request into the main branch.
+
+**Result**
+
+![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/2dc4fc63-343f-4540-8bd9-91de27a48463)
 
