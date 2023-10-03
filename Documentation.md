@@ -76,8 +76,24 @@ To monitor our EC2 instance, we'll need a monitoring agent:
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status
      ```
-   ![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/1f827c66-1471-4bda-af2f-e4cf82308e72)
+![image](https://github.com/SaraGurungLABS01/Deployment_4/assets/140760966/1f827c66-1471-4bda-af2f-e4cf82308e72)
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Step 6: Install Monitoring Agent
 
 Now, update our Jenkinsfile with the provided script:
